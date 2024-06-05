@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Install Composer dependencies
+ddev composer install
+
+# Run migrations
+ddev exec php artisan migrate --force
+
+# Install Node.js dependencies
+ddev exec npm install
+
+# Compile assets
+ddev exec npm run dev
