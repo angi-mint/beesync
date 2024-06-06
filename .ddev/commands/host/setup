@@ -6,6 +6,8 @@ ddev composer install
 # Run migrations
 ddev exec php artisan migrate --force
 
+ddev php artisan key:generate
+
 # Install Node.js dependencies
 ddev exec npm install
 
