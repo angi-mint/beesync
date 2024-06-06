@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import GuestLayout from '@/Layouts/GuestLayout.vue';
 import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
@@ -12,7 +12,9 @@ const form = useForm({
 
 const submit = () => {
     form.post(route('password.confirm'), {
-        onFinish: () => form.reset(),
+        onFinish: () => {
+            form.reset();
+        },
     });
 };
 </script>
