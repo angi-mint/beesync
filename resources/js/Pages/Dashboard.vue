@@ -11,7 +11,7 @@ const {t} = useI18n();
 
     <AuthenticatedLayout>
         <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">{{$t("nav.dashboard")}}</h2>
+            {{$t("nav.dashboard")}}
         </template>
 
         <div class="py-12">
