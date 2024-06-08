@@ -16,7 +16,7 @@ const showingNavigationDropdown = ref(false);
 <template>
     <div>
         <div class="min-h-screen bg-gray-100">
-            <nav class="bg-white border-b border-gray-100">
+            <nav class="bg-primary-900 border-b border-gray-100">
                 <!-- Primary Navigation Menu -->
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="flex justify-between h-16">
@@ -36,7 +36,7 @@ const showingNavigationDropdown = ref(false);
                                     {{$t("nav.dashboard")}}
                                 </NavLink>
                                 <NavLink :href="route('tasks')" :active="route().current('tasks')">
-                                    {{$t("nav.tasks")}}
+                                    {{$t("nav.task")}}
                                 </NavLink>
                                 <NavLink :href="route('calendar')" :active="route().current('calendar')">
                                     {{$t("nav.calendar")}}
@@ -130,7 +130,7 @@ const showingNavigationDropdown = ref(false);
                             {{$t("nav.dashboard")}}
                         </ResponsiveNavLink>
                         <ResponsiveNavLink :href="route('tasks')" :active="route().current('tasks')">
-                            {{$t("nav.tasks")}}
+                            {{$t("nav.task")}}
                         </ResponsiveNavLink>
                         <ResponsiveNavLink :href="route('timer')" :active="route().current('timer')">
                             {{$t("nav.timer")}}

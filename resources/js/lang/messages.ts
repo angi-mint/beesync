@@ -2,7 +2,7 @@ export default {
     en: {
         nav: {
             dashboard: 'Dashboard',
-            tasks: 'Tasks',
+            task: 'Tasks',
             calendar: 'Calendar',
             friends: 'Friends',
             timer: 'Timer',
@@ -26,7 +26,7 @@ export default {
     de : {
         nav: {
             dashboard: 'Dashboard',
-            tasks: 'Aufgaben',
+            task: 'Aufgaben',
             calendar: 'Kalender',
             friends: 'Freunde',
             timer: 'Timer',

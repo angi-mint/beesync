@@ -9,7 +9,7 @@ const {t} = useI18n();
 <template>
     <Head title="Timer"/>
     <AuthenticatedLayout>
-        <template #header>{{$t('nav.timer')}}</template>
+        <h1>{{$t("nav.timer")}}</h1>
     </AuthenticatedLayout>
 </template>
 

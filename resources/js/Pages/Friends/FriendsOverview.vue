@@ -9,7 +9,7 @@ const {t} = useI18n();
 <template>
     <Head title="Friends"/>
     <AuthenticatedLayout>
-        <template #header>{{$t('nav.friends')}}</template>
+        <h1>{{$t("nav.friends")}}</h1>
     </AuthenticatedLayout>
 </template>
 

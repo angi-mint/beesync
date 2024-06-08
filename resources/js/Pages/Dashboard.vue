@@ -10,10 +10,6 @@ const {t} = useI18n();
     <Head title="Dashboard" />
 
     <AuthenticatedLayout>
-        <template #header>
-            {{$t("nav.dashboard")}}
-        </template>
-
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <h2>{{$t("general.welcome_back", {name: $page.props.auth.user.name})}}</h2>
