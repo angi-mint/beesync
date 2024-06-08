@@ -7,15 +7,23 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 Route::get('/', function () {
-    return Inertia::render('Home', [
-//        'canLogin' => Route::has('login'),
-//        'canRegister' => Route::has('register'),
+    return Inertia::render('Welcome', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
     ]);
 });
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/timer', function () {
+    return Inertia::render('Timer/TimerOverview');
+})->middleware(['auth', 'verified'])->name('timer');
+
+Route::get('/tasks', function () {
+    return Inertia::render('Task/TaskOverview');
+})->middleware(['auth', 'verified'])->name('tasks');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
