@@ -12,6 +12,18 @@ export default {
 
     theme: {
         extend: {
+            colors: {
+                'primary': {
+                    '300': '#F1BA4D',
+                    '500': '#F5BB06',
+                    '700': '#98591C',
+                    '900': '#603205',
+
+                },
+                'dark': {
+                    900: '#000814'
+                },
+            },
             fontFamily: {
                 sans: ['Julius Sans One', ...defaultTheme.fontFamily.sans],
             },
