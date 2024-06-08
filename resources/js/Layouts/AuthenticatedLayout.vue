@@ -35,12 +35,19 @@ const showingNavigationDropdown = ref(false);
                                 <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     {{$t("nav.dashboard")}}
                                 </NavLink>
-                                <NavLink :href="route('timer')" :active="route().current('timer')">
-                                    {{$t("nav.timer")}}
-                                </NavLink>
                                 <NavLink :href="route('tasks')" :active="route().current('tasks')">
                                     {{$t("nav.tasks")}}
                                 </NavLink>
+                                <NavLink :href="route('calendar')" :active="route().current('calendar')">
+                                    {{$t("nav.calendar")}}
+                                </NavLink>
+                                <NavLink :href="route('friends')" :active="route().current('friends')">
+                                    {{$t("nav.friends")}}
+                                </NavLink>
+                                <NavLink :href="route('timer')" :active="route().current('timer')">
+                                    {{$t("nav.timer")}}
+                                </NavLink>
+
                             </div>
                         </div>
 
@@ -128,6 +135,13 @@ const showingNavigationDropdown = ref(false);
                         <ResponsiveNavLink :href="route('timer')" :active="route().current('timer')">
                             {{$t("nav.timer")}}
                         </ResponsiveNavLink>
+                        <ResponsiveNavLink :href="route('calendar')" :active="route().current('calendar')">
+                            {{$t("nav.calendar")}}
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink :href="route('friends')" :active="route().current('friends')">
+                            {{$t("nav.friends")}}
+                        </ResponsiveNavLink>
+
                     </div>
 
                     <!-- Responsive Settings Options -->
