@@ -13,7 +13,7 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                sans: ['Julius Sans One', ...defaultTheme.fontFamily.sans],
             },
         },
     },
