@@ -6,6 +6,9 @@ import DropdownLink from '@/Components/DropdownLink.vue';
 import NavLink from '@/Components/NavLink.vue';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
 import { Link } from '@inertiajs/vue3';
+import {useI18n} from "vue-i18n";
+
+const {t} = useI18n();
 
 const showingNavigationDropdown = ref(false);
 </script>
@@ -13,7 +16,7 @@ const showingNavigationDropdown = ref(false);
 <template>
     <div>
         <div class="min-h-screen bg-gray-100">
-            <nav class="bg-white border-b border-gray-100">
+            <nav class="bg-primary-900 border-b border-gray-100">
                 <!-- Primary Navigation Menu -->
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="flex justify-between h-16">
@@ -30,8 +33,21 @@ const showingNavigationDropdown = ref(false);
                             <!-- Navigation Links -->
                             <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                                 <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
-                                    Dashboard
+                                    {{$t("nav.dashboard")}}
                                 </NavLink>
+                                <NavLink :href="route('tasks')" :active="route().current('tasks')">
+                                    {{$t("nav.task")}}
+                                </NavLink>
+                                <NavLink :href="route('calendar')" :active="route().current('calendar')">
+                                    {{$t("nav.calendar")}}
+                                </NavLink>
+                                <NavLink :href="route('friends')" :active="route().current('friends')">
+                                    {{$t("nav.friends")}}
+                                </NavLink>
+                                <NavLink :href="route('timer')" :active="route().current('timer')">
+                                    {{$t("nav.timer")}}
+                                </NavLink>
+
                             </div>
                         </div>
 
@@ -64,10 +80,8 @@ const showingNavigationDropdown = ref(false);
                                     </template>
 
                                     <template #content>
-                                        <DropdownLink :href="route('profile.edit')"> Profile </DropdownLink>
-                                        <DropdownLink :href="route('logout')" method="post" as="button">
-                                            Log Out
-                                        </DropdownLink>
+                                        <DropdownLink :href="route('profile.edit')"> {{$t("user.profile")}} </DropdownLink>
+                                        <DropdownLink :href="route('logout')" method="post" as="button">{{$t("user.logout")}}</DropdownLink>
                                     </template>
                                 </Dropdown>
                             </div>
@@ -113,8 +127,21 @@ const showingNavigationDropdown = ref(false);
                 >
                     <div class="pt-2 pb-3 space-y-1">
                         <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
-                            Dashboard
+                            {{$t("nav.dashboard")}}
                         </ResponsiveNavLink>
+                        <ResponsiveNavLink :href="route('tasks')" :active="route().current('tasks')">
+                            {{$t("nav.task")}}
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink :href="route('timer')" :active="route().current('timer')">
+                            {{$t("nav.timer")}}
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink :href="route('calendar')" :active="route().current('calendar')">
+                            {{$t("nav.calendar")}}
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink :href="route('friends')" :active="route().current('friends')">
+                            {{$t("nav.friends")}}
+                        </ResponsiveNavLink>
+
                     </div>
 
                     <!-- Responsive Settings Options -->
@@ -127,9 +154,11 @@ const showingNavigationDropdown = ref(false);
                         </div>
 
                         <div class="mt-3 space-y-1">
-                            <ResponsiveNavLink :href="route('profile.edit')"> Profile </ResponsiveNavLink>
+                            <ResponsiveNavLink :href="route('profile.edit')">
+                                {{$t("user.profile")}}
+                            </ResponsiveNavLink>
                             <ResponsiveNavLink :href="route('logout')" method="post" as="button">
-                                Log Out
+                                {{$t("user.logout")}}
                             </ResponsiveNavLink>
                         </div>
                     </div>
@@ -139,7 +168,9 @@ const showingNavigationDropdown = ref(false);
             <!-- Page Heading -->
             <header class="bg-white shadow" v-if="$slots.header">
                 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    <slot name="header" />
+                    <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                        <slot name="header" />
+                    </h2>
                 </div>
             </header>
 

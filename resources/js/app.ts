@@ -10,6 +10,7 @@ import messages from "@/lang/messages.ts";
 
 const appName = import.meta.env.VITE_APP_NAME || 'beesync';
 const i18n = createI18n({
+    legacy: false,
     locale: 'en',
     fallbackLocale: 'en',
     messages

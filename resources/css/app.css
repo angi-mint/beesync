@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'Julius Sans One';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/public/fonts/JuliusSansOne-Regular.ttf');
+}

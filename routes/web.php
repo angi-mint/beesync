@@ -10,14 +10,29 @@ Route::get('/', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
     ]);
 });
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/tasks', function () {
+    return Inertia::render('Task/TaskOverview');
+})->middleware(['auth', 'verified'])->name('tasks');
+
+Route::get('/calendar', function () {
+    return Inertia::render('Calendar/CalendarOverview');
+})->middleware(['auth', 'verified'])->name('calendar');
+
+Route::get('/friends', function () {
+    return Inertia::render('Friends/FriendsOverview');
+})->middleware(['auth', 'verified'])->name('friends');
+
+Route::get('/timer', function () {
+    return Inertia::render('Timer/TimerOverview');
+})->middleware(['auth', 'verified'])->name('timer');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
